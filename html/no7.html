@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正常的猜拳</title>
+</head>
+
+<body>
+    <P>請選擇</P>
+    <button type="button" onclick="A()">剪刀</button>
+    <button type="button" onclick="B()">石頭</button>
+    <button type="button" onclick="C()">布</button>
+    <P>結果</P>
+    <table border="1" style="text-align: center;">
+        <tr>
+            <td>你出的</td>
+            <td>電腦出的</td>
+        </tr>
+        <tr>
+            <td><span id="A">?</span></td>
+            <td><span id="B">?</span></td>
+        </tr>
+    </table>
+    <p id="ans"></p>
+</body>
+<script>
+    function A() {
+        document.getElementById("A").innerHTML = "剪刀"
+        ans(0)
+    }
+
+    function B() {
+        document.getElementById("A").innerHTML = "石頭"
+        ans(1)
+    }
+
+    function C() {
+        document.getElementById("A").innerHTML = "布"
+        ans(2)
+    }
+
+    function ans(p) {
+        var c = Math.floor(Math.random() * 3)
+        if (c == 0) {
+            document.getElementById("B").innerHTML = "剪刀"
+        } else if (c == 1) {
+            document.getElementById("B").innerHTML = "石頭"
+        } else {
+            document.getElementById("B").innerHTML = "布"
+        }
+        if (c == 2 && p == 0) {
+            document.getElementById("ans").textContent = "你贏了"
+        } else if (c == 0 && p == 2) {
+            document.getElementById("ans").textContent = "你輸了"
+        } else if (c % 3 > p % 3) {
+            document.getElementById("ans").textContent = "你輸了"
+        } else if (c % 3 < p % 3) {
+            document.getElementById("ans").textContent = "你贏了"
+        } else {
+            document.getElementById("ans").textContent = "平手"
+        }
+    }
+</script>
+
+</html>

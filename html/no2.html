@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>整數計算機</title>
+</head>
+
+<body>
+    第一個數<input type="number" id="n1"> 第二個數
+    <input type="number" id="n2">
+    <button type="button" onclick="add()"> 
+        +
+    </button>
+    <button type="button" onclick="reduce()"> 
+        -
+    </button>
+    <button type="button" onclick="multiplication()"> 
+        x
+    </button>
+    <button type="button" onclick="division()"> 
+        /
+    </button>
+</body>
+<script>
+    function add() {
+        document.write(parseInt(document.getElementById("n1").value) + parseInt(document.getElementById("n2").value))
+    }
+
+    function reduce() {
+        document.write(parseInt(document.getElementById("n1").value) - parseInt(document.getElementById("n2").value))
+    }
+
+    function multiplication() {
+        document.write(parseInt(document.getElementById("n1").value) * parseInt(document.getElementById("n2").value))
+    }
+
+    function division() {
+        document.write(parseInt(document.getElementById("n1").value) / parseInt(document.getElementById("n2").value))
+    }
+</script>
+
+</html>

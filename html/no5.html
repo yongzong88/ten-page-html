@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計時器</title>
+</head>
+
+<body>
+    <span id="t">0小時0分0秒</span>
+    <button type="button" onclick="start()"> 
+        start 
+    </button>
+    <button type="button" onclick="stop()"> 
+        stop
+    </button>
+</body>
+<script>
+    var N = 0;
+    var b = 1;
+    window.setInterval("Check_Time()", 1000);
+
+    function Check_Time() {
+        if (b == 1) {
+            return;
+        }
+        N += 1;
+        var t = document.getElementById("t");
+        var H = Math.floor(N / 3600);
+        var M = Math.floor(Math.floor(N % 3600) / 60);
+        var S = N % 60;
+        t.innerHTML = H + "小時" + M + "分" + S + "秒";
+
+    }
+
+    function start() {
+        b = 0;
+    }
+
+    function stop() {
+        b = 1;
+        N = 0;
+    }
+</script>
+
+</html>

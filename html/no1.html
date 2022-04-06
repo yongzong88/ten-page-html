@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乘法表</title>
+</head>
+
+
+<body>
+    輸入n產生nxn的乘法表
+    <input type="number" id="domTextElement">
+    <button type="button" onclick="getValueInput()"> 
+      click me!! 
+    </button>
+</body>
+
+</html>
+<script>
+    function getValueInput() {
+        inputValue = document.getElementById("domTextElement").value;
+        document.write("<table border='1'>")
+        for (i = 1; i <= inputValue; i++) {
+            document.write("<tr>")
+            for (j = 1; j <= inputValue; j++) {
+                document.write("<td>")
+                if (i == j) {
+                    document.write("<p style='color:red;'>")
+                    document.write(i)
+                    document.write("*")
+                    document.write(j)
+                    document.write("=")
+                    document.write(i * j)
+                    document.write("</p>")
+                } else {
+                    document.write(i)
+                    document.write("*")
+                    document.write(j)
+                    document.write("=")
+                    document.write(i * j)
+                }
+                document.write("</td>")
+            }
+            document.write("</tr>")
+        }
+        document.write("</table>")
+    }
+</script>
